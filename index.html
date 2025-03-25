@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Belas | Shopping</title>
+    <link rel="stylesheet" href="globals.css" />
+<!-- Adicione esta linha se ainda não estiver presente -->
+</head>
+<body>
+    <div id="loading" class="loading-bar"></div>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <!--essa nav e onde vai tar agrupado a lista-->
+            <nav>
+                <ul>
+                   <a href="index.html"><li>Home</li></a>
+                    <a href="produtos.html"><li>produtos</li></a>
+                    <a href="promoção.html"><li>Promoção</li></a>
+                    <a href="novidades.html"><li>Novidades</li></a>
+                    <a href="index2.html"><li>contactos</li></a>
+                </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <span id="cart-count" class="zero">0</span>
+                <button id="openModalBtn"><img src="images/cart.png" ></button>
+                <img src="images/menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
+    <header>
+        <div class="header-inner-content">
+            <div class="header-bottom-side">
+                <div class="header-bottom-side-left">
+                    <h2>Emplementa um visual novo no seu trabalho!</h2>
+                    <p>
+                       O sucesso nem sempre é sinonimo de grandeza. mais sim de conhecimento. trabalho árduo com conhecimento, supera o sucesso. A grandiozidade virá.
+                    </p>
+                    <a href="https://pt.wikipedia.org/wiki/Elon_Musk" target="_blank"><button>ver agora &#8594</button></a>
+                </div>
+                <div class="header-bottom-side-rigth">
+                </div>
+            </div>
+        </div>
+    </header>
+
+<!--Main content-->
+<main>
+    <div class="gray-background">
+        <div class="png-inner-content">
+            <div class="cols cols-3 animated-images">
+                <img src="images/products/product-1.png" />
+                <img src="images/products/product-2.png" />
+                <img src="images/products/product-3.png" />
+            </div>
+        </div>
+    </div>
+     <div class="sell"></div>
+ <div>
+    <div class="page-inner-content">
+        <h3 class="section-title"> Produtos em Promoção</h3>
+        <div class="subtitle-underline"></div>
+        <a href="promoção.html"><button class="vermais">Ver mais</button></a>
+        <div class="cols cols-4">
+            <div class="product">
+                <img src="images/products/product-4.png" alt="Combo Gamer Meetion" />
+                <P class="product-name">COMBO GAMER MEETION</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p class="separar"><del>118,572.80<span>KZ</span><del></p>
+                <p class="product-price">94,572.80<span>KZ</span></p>
+
+                <button class="Comprar buy-btn"
+                 data-name="Combo Gamer Meetion"
+                  data-price="94,572.80"
+                  data-img="images/products/product-4.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-5.png" alt="" />
+                <P class="product-name">Placa de Video GTX X5</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <p class="separar"><del>448,000.15<span>KZ</span></del></p>
+                <p class="product-price">389,000.15<span>KZ</span></p>
+                <button class="Comprar buy-btn" 
+                data-name="Placa de Video GTX X5"
+                data-price="389,000.15"
+                data-img="images/products/product-5.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-6.png" alt="" />
+                <P class="product-name">CONTROLE PS5</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <p class="separar"><del>189,100.00<span>KZ</span></del></p>
+                <p class="product-price">110,100.00<span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                 data-name="Controle PS5"
+                 data-price="110,100.00"
+                 data-img="images/products/product-6.png">+Adicionar</button>
+            </div>
+           
+            <div class="product">
+                <img src="images/products/product-12.png" alt="" />
+                <P class="product-name">XBOX ONE</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p class="separar"><del>421,728.80 <span>KZ</span></del></p>
+                <p class="product-price">395,000.80 <span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                 data-name="XBOX ONE" 
+                 data-price="395,72.80"
+                 data-img="images/products/product-12.png">+Adicionar</button>
+            </div>
+
+        </div>
+
+         <div class="page-inner-content">
+        <h3 class="section-title"> Novidades</h3>
+        <div class="subtitle-underline"></div>
+        <div class="cols cols-4">
+            <div class="product">
+                <img src="images/products/product-8.png" alt="" />
+                <P class="product-name">IPHONE 14 PRO MAX</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                <p class="product-price">1.050,000.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn" 
+                data-name="IPHONE 14 PROMAX" 
+                data-price="1050000" 
+                data-img="images/products/product-8.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-9.png" alt="" />
+                <P class="product-name">GALAXY S23 ULTRA</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <p class="product-price">1.499,900.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn" 
+                data-name="GALAXY S23 ULTRA" 
+                data-price="1499900"
+                data-img="images/products/product-9.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-10.png" alt="" />
+                <P class="product-name">EMULADOR ASUS</P>
+                <p class="rate">&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+                <p class="product-price">27,567.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                 data-name="EMULADOR ASUS" 
+                 data-price="27,567.00"
+                 data-img="images/products/product-10.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-11.png" alt="" />
+                <P class="product-name">CAMERA DE MOVIMENTOS</P>
+                <p class="rate">&#9733;&#9733;&#9734;&#9734;&#9734;</p>
+                <p class="product-price">82,789.20 <span>KZ</span></p>
+                <button class="Comprar buy-btn" 
+                data-name="Camera de Movimentos"
+                 data-price="82,789.20"
+                 data-img="images/products/product-11.png">+Adicionar</button>
+            </div>
+           
+            </div>
+            <div class="page-inner-content">
+                <h3 class="section-title">3º Secção de produtos</h3>
+                <div class="subtitle-underline"></div>
+                <div class="cols cols-4">
+            <div class="product">
+                <img src="images/products/product-13.png" alt="" />
+                <P class="product-name">VOLANTE SIMULATOR</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                <p class="product-price">373,800.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                data-name="Volante simulator" 
+                data-price="373,800.00"
+                data-img="images/products/product-13.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-14.png" alt="" />
+                <P class="product-name">PLAYSTATION 5</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <p class="product-price">828,725.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                data-name="PLAYSTATION 5" 
+                data-price="828,725.00"
+                data-img="images/products/product-14.png">+Adicionar</button>
+            </div>
+            <div class="product">
+                <img src="images/products/product-15.png" alt="" />
+                <P class="product-name">DESKTOP RTX 3090</P>
+                <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                <p class="product-price">1,000.000.00 <span>KZ</span></p>
+                <button class="Comprar buy-btn"
+                 data-name="DESKTOP RTX 3090"
+                  data-price="1000000"
+                  data-img="images/products/product-15.png">+Adicionar</button>
+                </div>
+                 <div class="product">
+                    <img src="images/products/product-19.jpeg" alt="" />
+                    <P class="product-name">Fones De Ouvido Sem Fio J In</P>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9734;&#9734;</p>
+                    <p class="product-price">164,000.00<span>KZ</span></p>
+                    <button class="Comprar buy-btn"
+                     data-name="Fones De Ouvido Sem Fio J In" 
+                     data-price="164000"
+                     data-img="images/products/product-19.jpeg">+Adicionar</button>
+        </div>
+    </div>
+ </div>
+
+ <div class="gray-background">
+    <div class="header-inner-content">
+        <div class="header-bottom-side exclusive-container">
+            <div class="header-bottom-side-left">
+                <h2>Smart Band 4</h2>
+                <p>
+                   O Mi Smart Band tem a tela Amoled 39.9% maior que o antecesor Mi Band 3, tela completamente digital com o brilho ajustável, de tal modo que tudo é muito claro
+                </p>
+                <a href="https://www.mi.com/uk/mi-smart-band-4/?srsltid=AfmBOoqlZMR5_JC10nW_LMgJQ_c6ohqCz3g3D4SORlUyL_qDoCKYIZRc" target="_blank"><button>ver agora &#8594</button></a>
+            </div>
+            <div class="header-bottom-side-rigthh">
+                <img src="images/exclusive.png" />
+            </div>
+        </div>
+    </div>
+ </div>
+
+<div>
+    <div class="page-inner-content">
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"</p>
+                <p>O melhor ecommerce de dispositivos eletronicos principalmente para os Gamer, muito moderno e responsivo</p>
+                 <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                 <p>Reginaldo</p>
+            </div>
+            <div class="testimonial">
+                <p>"</p>
+                <p>Realmente estou supreso com esse site, eu comprei o Desktop com a placa grafica RTX, e consegui rodar jogos pesados com um desenpenho muito bom</p>
+                 <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                 <p>Skorpion Gamer</p>
+            </div>
+            <div class="testimonial">
+                <p>"</p>
+                <p> Eu comprei o Galaxy S24 ULTRA e não demorou a chegar é muito espetacular como a velocidade do pedido chega até eles rapidamente</p>
+                 <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                 <p>Robin Hood</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+</main>
+
+<footer class="gray-bacground">
+<div class="page-inner-content footer-content">
+    <div class="download-options">
+        <p>Baixa nossa aplicação</p>
+        <p>Baixa a nossa aplicação para android e ios</p>
+        <div>
+            <img src="images/play-store.png" alt="" />
+            <img src="images/app-store.png" alt="" />
+        </div>
+    </div>
+
+    <div class="logo-footer"></div>
+    <h1 class="logo">Belas<span>Shopping</span></h1>
+    <p>Este site tem como objectivo principlal facilitar as pessoas a fazer compras sem precisar saírem de casa</p>
+</div>
+
+<div class="links-footer">
+    <h3>Links importantes</h3>
+    <ul>
+        <li>Cupomss</li>
+        <li>Blog Post</li>
+        <li>Politíticas</li>
+        <li>Torne-se afiliados</li>
+    </ul>
+</div>
+
+<hr class="page-inner-content" />
+
+<div class="page-inner-content copyright"> 
+    <p>copyright 2024 - como - todos direitos reservados</p>
+</div>
+</footer>
+
+<!--Modal CART-->
+<div class="modal-overlay"
+id="modalOverlay"
+>
+
+<div class="modal" id="cartModal">
+    <h2 class="letrameucarrinho">Meu carrinho</h2>
+
+     
+     <div class="meio" id="cart-items"></div>
+
+     <ul id="cartItems"></ul>
+
+    <p class="total"> <span id="totalPrice">0.00</span></p>
+
+    <p class="enderecodeentrega" id="errorMessage"> Digite seu endereço de entrega</p>   
+    <input type="text"
+    placeholder="Digite seu endereço"
+    id="addressInput"
+    class="inputbarra"
+    />
+    <!-- <p class="digite" id="address-warn">Digite seu Endereço completo!</p> -->
+    
+<div class="ultimadiv">
+    <button class="fechar"  id="closeModalBtn">fechar</button>
+    <button id="checkoutBtn" class="finalizar">Finalizar pedido</button>
+</div>
+
+</div>
+</div>
+<!--FIM Modal CART-->
+
+    <script src="script.js"></script>
+</body>
+</html>

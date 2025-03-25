@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <link rel="shortcut icon" href="imajens/favicon-32x32.png" type="image/x-icon">
+    <style>
+        * {
+            box-sizing: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('images/ecosamsung.jpg'); /* Adicione a imagem de fundo aqui */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Adiciona fixação da imagem de fundo */
+            color: #fff; /* Cor do texto para contraste */
+        }
+
+        /* header */
+
+
+
+.navbar{
+    background-color: #2c2c2c;
+    padding: 0.1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 1001; /* Aumente o z-index da navbar */
+}
+
+.navbar>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo{
+    color: #f06407;
+    margin-left: 5px;
+}
+
+.logo span{
+    color: #06e737;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child{
+    margin-right: 1rem;
+}
+
+nav ul li{
+    color: #fff;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+  transform: translateY(-5px);
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.menu-button{
+    display: none;
+    margin: 2cap;
+}
+
+
+/*Media queries*/
+@media (max-width: 800px){
+    .logo{
+        font-size: 1.2rem;
+    }
+} 
+
+.menu-button{
+    display: block;
+}
+
+nav{
+    position: absolute;
+    background-color: rgba(44, 44, 44, 0.9);
+    width: 100%;
+    top: 70px;
+    display: none;
+}
+
+.show-menu nav{
+    display: block;
+}
+
+nav ul{
+    flex-direction: column;
+}
+
+nav ul li{
+    text-align: center;
+    padding: 0.8rem;
+}
+
+/* Fim Header */
+
+/*cartmodal*/
+
+/* Fundo escurecido */
+.modal-overlay {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999; /* Fundo escurecido tem z-index menor */
+}
+
+/* Modal */
+.modal {
+    display: none; /* Escondido por padrão */
+    position: fixed;
+    top: 50px; /* Ajuste o posicionamento para não cobrir a navbar */
+    left: 50%;
+    transform: translate(-50%, 0);
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 5%;
+    width: 90%; /* Ajuste a largura conforme necessário */
+    max-width: 100%; /* Limite a largura máxima */
+    height: calc(100% - 100px); /* Ajuste a altura para não cobrir a navbar */
+    z-index: 1000; /* Modal com z-index menor que a navbar */
+    max-height: calc(100% - 100px); /* Limita a altura máxima do modal */
+    overflow-y: auto; /* Adiciona rolagem vertical */
+    color: black;
+}
+ 
+.letrameucarrinho{
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.8rem;
+    line-height: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+.meio{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.total{
+    display: flex;
+    font-weight: 700;
+    font-size: 25px;
+    justify-items: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.enderecodeentrega{
+    font-size: 15px;
+    font-weight: 700;
+    margin-top: 1rem;
+    color: red;
+    display: none ;
+}
+
+/* /* .digite{
+    color: rgb(239 68 68);
+    display: none; 
+} */
+
+.inputbarra{
+    width: 90%;
+    border-width: 2px;
+    padding: 0.60rem;
+    border-radius: 0.25rem;
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+    margin-left: 3rem;
+}
+
+.ultimadiv{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 1.25rem;
+    position: sticky;
+    bottom: 0;
+    background-color: white;
+    padding: 1rem 0;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.finalizar{
+    font-size: 16px;
+    background-color: rgb(34 197 94 );
+    color: #fff;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    margin-right: 4rem;
+}
+
+.fechar{
+    text-decoration: none;
+    font-size: 17px;
+    margin-left: 3rem;
+}
+
+#cartItems li {
+    margin-bottom: 15px; /* Espaçamento entre os itens */
+    list-style-type: none; /* Remove marcadores da lista */
+    line-height: 1.5; /* Melhora a legibilidade */
+    font-weight: 500;
+
+}
+
+
+#cartItems li div {
+    flex-grow: 1; /* Nome e preço ocupam mais espaço */
+}
+
+#cartItems button {
+    margin-left: 10px;
+}
+
+#addressInput{
+    font-size: 17px;
+}
+
+.no-scroll {
+    overflow: hidden;
+    height: 100%;
+  }
+
+  #openModalBtn{
+    background: none;
+    width: 2.2rem;
+}
+
+.zero{
+    color: #fff;
+    background-color: red;
+    padding: 3px;
+    border-radius: 20px;
+    margin-right: 2px;
+}
+
+/*cartmodal*/
+
+/*carrosel*/
+
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #3498db;
+    z-index: 9999;
+    display: none;
+    animation: loading 1s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+.page-inner-content{
+    display: flex;
+    justify-items: center;
+justify-content: center;
+align-items: center;
+margin-top: 4rem;
+
+}
+
+.product img{
+width: 200px;
+height: 200px;
+}
+
+.cols {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* Espaçamento entre os itens */
+}
+
+.product {
+    flex: 1 1 calc(25% - 1rem); /* Ajuste a largura dos itens para 4 por linha */
+    box-sizing: border-box;
+}
+
+.section-title{
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    margin-left: 30rem;
+    margin-top: 5px;
+    font-size: 30px;
+}
+
+.Comprar{
+ background-color: #ec780b;
+ width: 50%;
+ border-radius: 20px;
+ padding: 4px;
+ cursor: pointer;
+ font-size: 17px;
+ display: flex;
+ color: #fff;
+ font-family: Arial, Helvetica, sans-serif;
+ border-style: none;
+}
+
+.Comprar:hover{
+    transform: translateX(-5px);
+    transition: all 0.1s;
+   background-color: rgb(230, 162, 17);
+}
+
+.separar{
+    margin-bottom: 5px;
+    color: #e47070;
+}
+
+.subtitle-underline{
+    width: 100px;
+    height: 5px;
+    background: rgb(248, 113, 3);
+    border-radius: 9999px;
+    margin: 8px auto 0 auto;
+}
+
+/* inicio footer*/
+.footer-content{
+    display: flex;
+    align-items: center;
+    color: #8f8f8f;
+    padding: 4rem 1rem;
+    /*para separar os elementos*/
+    gap: 2rem;
+}
+
+.download-options>*{
+    margin: 1rem 0;
+}
+
+.download-options>p:first-child{
+    font-weight: bold;
+    color: #fff;
+}
+
+.download-options>div{
+    display: flex;
+}
+
+.download-options>div img{
+    width: 180px;
+}
+
+.logo-footer{
+    text-align: center;
+}
+
+.links-footer h3{
+    color: #fff;
+    margin-bottom: 0.8rem;
+    padding-left: 10px;
+    position: relative;
+    top: -20px;
+}
+
+.links-footer ul{
+    list-style: none;
+}
+
+.links-footer ul li{
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  padding-left: 10px;
+  position: relative;
+  top: -20px;
+  color: #8f8f8f;
+}
+
+
+.copyright{
+    color: #fff;padding: 2rem 0;
+    text-align: center;
+}
+
+.gray-bacground{
+    background-color: #2c2c2c;
+    margin-top: 14rem;
+}
+
+.page-inner-content{
+    max-width: 1280%;
+    margin: 0 auto;
+}
+
+
+
+/*fim footer*/
+
+    </style>
+    <title>Como me contactar</title>
+</head>
+<body>
+    <div id="loading" class="loading-bar"></div>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <!--essa nav e onde vai tar agrupado a lista-->
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                     <a href="produtos.html"><li>produtos</li></a>
+                     <a href="promoção.html"><li>Promoção</li></a>
+                     <a href="novidades.html"><li>Novidades</li></a>
+                     <a href="index2.html"><li>contactos</li></a>
+                 </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <span id="cart-count" class="zero">0</span>
+                <button id="openModalBtn"><img src="images/cart.png" ></button>
+                <img src="images/menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
+    <main>
+         <h3 class="section-title"> Produtos em Promoção</h3>
+          <div class="subtitle-underline"></div><br>
+        <div class="page-inner-content">
+            <div class="cols cols-4">
+                <div class="product">
+                    <img src="images/products/product-4.png" alt="Combo Gamer Meetion" />
+                    <P class="product-name">COMBO GAMER M...</P>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class="separar"><del>118,572.80<span>KZ</span><del></p>
+                    <p class="product-price">94,572.80<span>KZ</span></p>
+    
+                    <button class="Comprar buy-btn"
+                     data-name="Combo Gamer Meetion"
+                      data-price="94,572.80"
+                      data-img="images/products/product-4.png">+Adicionar</button>
+                </div>
+                <div class="product">
+                    <img src="images/products/product-5.png" alt="" />
+                    <P class="product-name">Placa de Video GTX X5</P>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="separar"><del>448,000.15<span>KZ</span></del></p>
+                    <p class="product-price">389,000.15<span>KZ</span></p>
+                    <button class="Comprar buy-btn" 
+                    data-name="Placa de Video GTX X5"
+                    data-price="389,000.15"
+                    data-img="images/products/product-5.png">+Adicionar</button>
+                </div>
+                <div class="product">
+                    <img src="images/products/product-6.png" alt="" />
+                    <P class="product-name">CONTROLE PS5</P>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9733;</p>
+                    <p class="separar"><del>189,100.00<span>KZ</span></del></p>
+                    <p class="product-price">110,100.00<span>KZ</span></p>
+                    <button class="Comprar buy-btn"
+                     data-name="Controle PS5"
+                     data-price="110,100.00"
+                     data-img="images/products/product-6.png">+Adicionar</button>
+                </div>
+               
+                <div class="product">
+                    <img src="images/products/product-12.png" alt="" />
+                    <P class="product-name">XBOX ONE</P>
+                    <p class="rate">&#9733;&#9733;&#9733;&#9733;&#9734;</p>
+                    <p class="separar"><del>421,728.80 <span>KZ</span></del></p>
+                    <p class="product-price">395,000.80 <span>KZ</span></p>
+                    <button class="Comprar buy-btn"
+                     data-name="XBOX ONE" 
+                     data-price="395,72.80"
+                     data-img="images/products/product-12.png">+Adicionar</button>
+                </div>
+    </main>
+
+    <footer class="gray-bacground">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Baixa nossa aplicação</p>
+                <p>Baixa a nossa aplicação para android e ios</p>
+                <div>
+                    <img src="images/play-store.png" alt="" />
+                    <img src="images/app-store.png" alt="" />
+                </div>
+            </div>
+        
+            <div class="logo-footer"></div>
+            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <p>Este site tem como objectivo principlal facilitar as pessoas a fazer compras sem precisar saírem de casa</p>
+        </div>
+        
+        <div class="links-footer">
+            <h3>Links importantes</h3>
+            <ul>
+                <li>Cupomss</li>
+                <li>Blog Post</li>
+                <li>Politíticas</li>
+                <li>Torne-se afiliados</li>
+            </ul>
+        </div>
+        
+        <hr class="page-inner-content" />
+        
+        <div class="page-inner-content copyright"> 
+            <p>copyright 2024 - como - todos direitos reservados</p>
+        </div>
+        </footer>
+
+    <!--Modal CART-->
+<div class="modal-overlay"
+id="modalOverlay"
+>
+
+<div class="modal" id="cartModal">
+    <h2 class="letrameucarrinho">Meu carrinho</h2>
+
+     
+     <div class="meio" id="cart-items"></div>
+
+     <ul id="cartItems"></ul>
+
+    <p class="total"> <span id="totalPrice">0.00</span></p>
+
+    <p class="enderecodeentrega" id="errorMessage">Digite seu endereço de entrega</p>   
+    <input type="text"
+    placeholder="Digite seu endereço"
+    id="addressInput"
+    class="inputbarra"
+    />
+    <!-- <p class="digite" id="address-warn">Digite seu Endereço completo!</p> -->
+    
+<div class="ultimadiv">
+    <button class="fechar"  id="closeModalBtn">fechar</button>
+    <button id="checkoutBtn" class="finalizar">Finalizar pedido</button>
+</div>
+
+</div>
+</div>
+<!--FIM Modal CART-->
+
+
+    <script src="script.js"></script>
+</body>
+</html>

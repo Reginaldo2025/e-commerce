@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style2.css">
-    <link rel="shortcut icon" href="imajens/favicon-32x32.png" type="image/x-icon">
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <style>
         * {
             box-sizing: 0;
@@ -154,6 +154,7 @@ nav ul li{
     overflow-y: auto; /* Adiciona rolagem vertical */
     color: black;
 }
+
  
 .letrameucarrinho{
     text-align: center;
@@ -431,7 +432,136 @@ height: 200px;
     margin: 0 auto;
 }
 
+/* Responsividade para telas menores que 768px (celulares) */
+@media (max-width: 768px) {
 
+.page-inner-content {
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+}
+
+.section-title {
+    margin-left: 0;
+    font-size: 22px;
+    justify-content: center;
+    text-align: center;
+}
+
+.cols {
+    flex-direction: column;
+    align-items: center;
+}
+
+.product {
+    flex: 1 1 100%;
+    max-width: 90%;
+    margin-bottom: 1rem;
+}
+
+.product img {
+    width: 100%;
+    height: auto;
+}
+
+.footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem 1rem;
+    text-align: left;
+}
+
+.download-options > div {
+    flex-direction: column;
+    align-items: center;
+}
+
+.download-options > div img {
+    width: 80%;
+    margin-bottom: 1rem;
+}
+
+.logo-footer, .links-footer {
+    text-align: center;
+    width: 100%;
+}
+
+.ultimadiv {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.finalizar {
+    margin: 0;
+    width: 90%;
+    padding: 0.5rem;
+    font-size: 18px;
+}
+
+.fechar {
+    margin: 0;
+    font-size: 18px;
+}
+
+.inputbarra {
+    margin-left: 0;
+    width: 95%;
+}
+
+.nav-icon-container img {
+    width: 25px;
+}
+
+.modal {
+    width: 95%;
+    height: 90%;
+    padding: 1rem;
+}
+
+.letrameucarrinho {
+    font-size: 1.5rem;
+}
+
+.total {
+    font-size: 1.2rem;
+}
+
+#cartItems li {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+}
+
+#cartItems li div {
+    margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+}
+
+#cartItems button {
+    width: 100%; /* O botão ocupa toda a largura */
+    padding: 10px; /* Aumenta o tamanho do botão para facilitar o clique */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    text-align: center; /* Centraliza o texto no botão */
+}
+}
+
+@media (max-width: 480px) {
+#cartItems li {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+}
+
+#cartItems li div {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+}
+
+#cartItems button {
+    width: 90%; /* O botão ocupa quase toda a largura */
+    padding: 12px; /* Aumenta o tamanho do botão */
+    font-size: 12px; /* Ajusta o tamanho da fonte para telas menores */
+    border-radius: 5px; /* Mantém bordas arredondadas */
+}
+}
 
 /*fim footer*/
 
@@ -442,7 +572,7 @@ height: 200px;
     <div id="loading" class="loading-bar"></div>
     <div class="navbar">
         <div class="header-inner-content">
-            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <h1 class="logo">Belas<span>Eletronicos</span></h1>
             <!--essa nav e onde vai tar agrupado a lista-->
             <nav>
                 <ul>
@@ -450,7 +580,7 @@ height: 200px;
                      <a href="produtos.html"><li>produtos</li></a>
                      <a href="promoção.html"><li>Promoção</li></a>
                      <a href="novidades.html"><li>Novidades</li></a>
-                     <a href="index2.html"><li>contactos</li></a>
+                     <a href="contactos.html"><li>contactos</li></a>
                  </ul>
             </nav>
             <div class="nav-icon-container">
@@ -525,17 +655,17 @@ height: 200px;
             </div>
         
             <div class="logo-footer"></div>
-            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <h1 class="logo">Belas<span>Eletronicos</span></h1>
             <p>Este site tem como objectivo principlal facilitar as pessoas a fazer compras sem precisar saírem de casa</p>
         </div>
         
         <div class="links-footer">
             <h3>Links importantes</h3>
             <ul>
-                <li>Cupomss</li>
-                <li>Blog Post</li>
-                <li>Politíticas</li>
-                <li>Torne-se afiliados</li>
+                <li>Numero: 929052930</li>
+         <li>Facbook: Reginaldo António Ruca</li>
+         <li>Email: reginaldoaa14@gmail.com</li>
+         <li>Torne-se afiliados</li>
             </ul>
         </div>
         

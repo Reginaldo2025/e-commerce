@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>contactos</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
+</head>
+<style>
+ * {
+            box-sizing: 0;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+        }
+
+        /* header */
+.navbar{
+    background-color: #2c2c2c;
+    padding: 0.1rem;
+    position: sticky;
+    top: 0;
+    box-shadow: 10px 0px 10px #2c2c2c;
+    z-index: 1001; /* Aumente o z-index da navbar */
+}
+
+.navbar>div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo{
+    color: #f06407;
+    margin-left: 5px;
+}
+
+.logo span{
+    color: #06e737;
+}
+
+nav ul{
+    display: flex;
+    list-style: none;
+    align-items: center;
+}
+
+.nav-icon-container{
+    display: flex;
+    align-items: center;
+}
+
+.nav-icon-container img{
+    width: 30px;
+    cursor: pointer;
+}
+
+.nav-icon-container img:first-child{
+    margin-right: 1rem;
+}
+
+nav ul li{
+    color: #fff;
+    margin-right: 1.5rem;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+  transform: translateY(-5px);
+  transition: 0.2s;
+  font-weight: bold;
+}
+
+.menu-button{
+    display: none;
+    margin: 2cap;
+}
+
+/*Media queries*/
+@media (max-width: 800px){
+    .logo{
+        font-size: 1.2rem;
+    }
+} 
+
+.menu-button{
+    display: block;
+}
+
+.header-bottom-side{
+    /*para mudar a direção do flex*/
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+nav{
+    position: absolute;
+    background-color: rgba(44, 44, 44, 0.7); /* Reduzido de 0.9 para 0.7 */
+    width: 100%;
+    top: 70px;
+    display: none;
+}
+
+.show-menu nav{
+    display: block;
+}
+
+nav ul{
+    flex-direction: column;
+}
+
+nav ul li{
+    text-align: center;
+    padding: 0.8rem;
+}
+
+
+/* inicio footer*/
+.footer-content{
+    display: flex;
+    align-items: center;
+    color: #8f8f8f;
+    padding: 4rem 1rem;
+    /*para separar os elementos*/
+    gap: 2rem;
+}
+
+.download-options>*{
+    margin: 1rem 0;
+}
+
+.download-options>p:first-child{
+    font-weight: bold;
+    color: #fff;
+}
+
+.download-options>div{
+    display: flex;
+}
+
+.download-options>div img{
+    width: 180px;
+}
+
+.logo-footer{
+    text-align: center;
+}
+
+.links-footer h3{
+    color: #fff;
+    margin-bottom: 0.8rem;
+    padding-left: 10px;
+    position: relative;
+    top: -20px;
+}
+
+.links-footer ul{
+    list-style: none;
+}
+
+.links-footer ul li{
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+  padding-left: 10px;
+  position: relative;
+  top: -20px;
+  color: #8f8f8f;
+}
+
+
+.copyright{
+    color: #fff;padding: 2rem 0;
+    text-align: center;
+}
+
+.gray-bacground{
+    background-color: #2c2c2c;
+    margin-top: 14rem;
+}
+
+.page-inner-content{
+    max-width: 1280%;
+    margin: 0 auto;
+}
+
+
+/*fim footer*/
+
+.loading-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 5px;
+    background-color: #3498db;
+    z-index: 9999;
+    display: none;
+    animation: loading 1s linear forwards;
+}
+
+@keyframes loading {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+</style>
+<style>
+    /* Contact Page Styles */
+    .contact-page {
+        padding: 3rem 0;
+        background: linear-gradient(135deg, #f5f5f5 0%, #e8f5e9 100%);
+        min-height: 70vh;
+    }
+
+    .store-presentation {
+        display: flex;
+        align-items: center;
+        gap: 3rem;
+        margin-bottom: 4rem;
+    }
+
+    .store-image img {
+        width: 100%;
+        max-width: 500px;
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        margin: 4px;
+    }
+
+    .presentation-text h2 {
+        color: #2c2c2c;
+        font-size: 2.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .presentation-text p {
+        color: #555;
+        font-size: 1.1rem;
+        line-height: 1.6;
+    }
+
+    .contact-section h2 {
+        color: #2c2c2c;
+        font-size: 2rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+
+    .contact-info {
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
+        margin-bottom: 3rem;
+    }
+
+    .payment-info, .communication-info {
+        flex: 1;
+        background: white;
+        padding: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+
+    .payment-info h3, .communication-info h3 {
+        color: #f06407;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .payment-info p, .communication-info p {
+        margin-bottom: 1rem;
+        color: #333;
+    }
+
+    .purchase-info {
+        background: #2c2c2c;
+        color: white;
+        padding: 2rem;
+        border-radius: 8px;
+        margin-top: 2rem;
+    }
+
+    .purchase-info h3 {
+        color: #f06407;
+        margin-bottom: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .purchase-info p {
+        margin-bottom: 1rem;
+        line-height: 1.6;
+    }
+
+    .whatsapp-finalize {
+        background: #06e737;
+        color: #2c2c2c;
+        padding: 1rem;
+        border-radius: 5px;
+        margin-top: 2rem;
+        text-align: center;
+        font-weight: bold;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { transform: scale(1); }
+        50% { transform: scale(1.05); }
+        100% { transform: scale(1); }
+    }
+
+    @media (max-width: 768px) {
+        .store-presentation {
+            flex-direction: column;
+        }
+        
+        .contact-info {
+            flex-direction: column;
+        }
+    }
+</style>
+<body>
+    <div id="loading" class="loading-bar"></div>
+    <div class="navbar">
+        <div class="header-inner-content">
+            <h1 class="logo">Belas<span>Electronicos</span></h1>
+            <!--essa nav e onde vai tar agrupado a lista-->
+            <nav>
+                <ul>
+                    <a href="index.html"><li>Home</li></a>
+                     <a href="produtos.html"><li>produtos</li></a>
+                     <a href="promoção.html"><li>Promoção</li></a>
+                     <a href="novidades.html"><li>Novidades</li></a>
+                     <a href="contactos.html"><li>contactos</li></a>
+                 </ul>
+            </nav>
+            <div class="nav-icon-container">
+                <img src="images/menu.png" class="menu-button" />
+            </div>
+        </div>
+    </div>
+
+    <main class="contact-page">
+        <div class="page-inner-content">
+            <section class="store-presentation">
+                <div class="store-image">
+                    <img src="images/pri.png" alt="Imagem da Loja Belas Eletrônicos" />
+                </div>
+                <div class="presentation-text">
+                    <h2>Bem-vindo à Belas Eletrônicos</h2>
+                    <p><b>Somos uma loja especializada em eletrônicos de alta qualidade, oferecendo os melhores produtos com preços competitivos. Nossa missão é levar tecnologia de ponta até você com segurança.</b></p>
+                </div>
+            </section>
+
+            <section class="contact-section">
+                <h2>Nossos Contatos</h2>
+                <div class="contact-info">
+                    <div class="payment-info">
+                        <h3>Dados Bancários</h3>
+                        <p><strong>IBAN:</strong> AO06 0040 0000 6170 1745 1014 5</p>
+                        <p><strong>Banco:</strong> BAI</p>
+                        <p><strong>Titular:</strong> Belas Eletrônicos Lda</p>
+                    </div>
+                    <div class="communication-info">
+                        <h3>Formas de Contato</h3>
+                        <p><strong>Email:</strong> reginaldoaa14@gmail.com</p>
+                        <p><strong>WhatsApp:</strong> +244 929 052 930</p>
+                        <p><strong>Facebook:</strong> Reginaldo António Ruca</p>
+                    </div>
+                </div>
+
+                <div class="purchase-info">
+                    <h3>Como Finalizar sua Compra</h3>
+                    <p>1. Escolha seus produtos no site</p>
+                    <p>2. Envie mensagem pelo WhatsApp com os itens desejados</p>
+                    <p>3. Efetue o pagamento antecipado para confirmar seu pedido</p>
+                    <p>4. Aguarde a entrega no conforto de sua casa</p>
+                    <div class="whatsapp-finalize">
+                        <p>Não esqueça de escrever <strong>"FINALIZAR"</strong> no WhatsApp para confirmar seu pedido!</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="gray-bacground">
+        <div class="page-inner-content footer-content">
+            <div class="download-options">
+                <p>Baixa nossa aplicação</p>
+                <p>Baixa a nossa aplicação para android e ios</p>
+                <div>
+                    <img src="images/play-store.png" alt="" />
+                    <img src="images/app-store.png" alt="" />
+                </div>
+            </div>
+        
+            <div class="logo-footer"></div>
+            <h1 class="logo">Belas<span>Electronicos</span></h1>
+            <p>Este site tem como objectivo principlal facilitar as pessoas a fazer compras sem precisar saírem de casa</p>
+        </div>
+        
+        <div class="links-footer">
+            <h3>Links importantes</h3>
+            <ul>
+                <li>Numero: 929052930</li>
+                <li>Facbook: Reginaldo António Ruca</li>
+                <li>Email: reginaldoaa14@gmail.com</li>
+                <li>Torne-se afiliados</li>
+            </ul>
+        </div>
+        
+        <hr class="page-inner-content" />
+        
+        <div class="page-inner-content copyright"> 
+            <p>copyright 2024 - como - todos direitos reservados</p>
+        </div>
+        </footer>
+        <script src="script.js"></script>
+</body>
+</html>

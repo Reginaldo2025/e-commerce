@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produtos</title>
+    <link rel="shortcut icon" href="images/favicon.png" type="image/x-icon">
     <style>
         *{
    box-sizing: border-box;
@@ -472,6 +473,44 @@ span#totalPrice{
 
 /* fim produtos*/
 
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  #cartItems li {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: flex-start; /* Alinha o conteúdo à esquerda */
+  }
+
+  #cartItems li div {
+    margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+  }
+
+  #cartItems button {
+    width: 100%; /* O botão ocupa toda a largura */
+    padding: 10px; /* Aumenta o tamanho do botão para facilitar o clique */
+    font-size: 14px; /* Reduz o tamanho da fonte */
+    text-align: center; /* Centraliza o texto no botão */
+  }
+}
+
+@media (max-width: 480px) {
+  #cartItems li {
+    flex-direction: column; /* Alinha os itens verticalmente */
+    align-items: center; /* Centraliza o conteúdo */
+  }
+
+  #cartItems li div {
+    text-align: center; /* Centraliza o texto */
+    margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+  }
+
+  #cartItems button {
+    width: 90%; /* O botão ocupa quase toda a largura */
+    padding: 12px; /* Aumenta o tamanho do botão */
+    font-size: 12px; /* Ajusta o tamanho da fonte para telas menores */
+    border-radius: 5px; /* Mantém bordas arredondadas */
+  }
+}
+
 /* inicio footer*/
 .footer-content{
     display: flex;
@@ -557,15 +596,15 @@ span#totalPrice{
     <div id="loading" class="loading-bar"></div>
     <div class="navbar">
         <div class="header-inner-content">
-            <h1 class="logo">Belas<span>Shopping</span></h1>
+            <h1 class="logo">Belas<span>Eletronicos</span></h1>
             <!--essa nav e onde vai tar agrupado a lista-->
             <nav>
                 <ul>
                    <a href="index.html"><li>Home</li></a>
                     <a href="produtos.html"><li>produtos</li></a>
                     <a href="promoção.html"><li>Promoção</li></a>
-                    <a href="index2.html"><li>contactos</li></a>
                     <a href="novidades.html"><li>Novidades</li></a>
+                     <a href="contactos.html"><li>contactos</li></a>
                 </ul>
             </nav>
             <div class="nav-icon-container">
@@ -577,7 +616,7 @@ span#totalPrice{
     </div>
 <h1 class="categorias">Categorias</h1>
 <select id="categorySelect1" class="category-select" onchange="showCategory(this.value)">
-    <option value="">Selecione uma categoria</option>
+    <option value="">Categoria de Informática</option>
     <option value="Informatica">Telemoveis</option>
     <option value="Phones">Phones</option>
     <option value="Laptops">Laptops</option>
@@ -586,7 +625,7 @@ span#totalPrice{
 </select>
 <br>
 <select id="categorySelect2" class="category-select" onchange="showCategory(this.value)">
-    <option value="">Selecione uma categoria</option>
+    <option value="">Categoria de Eletrodomesticos</option>
     <option value="Eletrodomesticos">Tostaderas</option>
     <option value="Frigorificos">Frigoríficos</option>
     <option value="Maquinas de lavar">Máquinas de lavar</option>
@@ -931,17 +970,17 @@ id="modalOverlay"
         </div>
     
         <div class="logo-footer"></div>
-        <h1 class="logo">Belas<span>Shopping</span></h1>
+        <h1 class="logo">Belas<span>Eletronicos</span></h1>
         <p>Este site tem como objectivo principlal facilitar as pessoas a fazer compras sem precisar saírem de casa</p>
     </div>
     
     <div class="links-footer">
         <h3>Links importantes</h3>
         <ul>
-            <li>Cupomss</li>
-            <li>Blog Post</li>
-            <li>Politíticas</li>
-            <li>Torne-se afiliados</li>
+            <li>Numero: 929052930</li>
+         <li>Facbook: Reginaldo António Ruca</li>
+         <li>Email: reginaldoaa14@gmail.com</li>
+         <li>Torne-se afiliados</li>
         </ul>
     </div>
     

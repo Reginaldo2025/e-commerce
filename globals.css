@@ -744,7 +744,55 @@ cursor: pointer;
     max-height: calc(100% - 50px); /* Limita a altura máxima do modal */
     overflow-y: auto; /* Adiciona rolagem vertical */
 }
- 
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .modal {
+        width: 90%; /* Ajusta a largura para ocupar quase toda a tela */
+        padding: 15px; /* Reduz o padding */
+    }
+
+    #cartItems li {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: flex-start; /* Alinha o conteúdo à esquerda */
+    }
+
+    #cartItems li div {
+        margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+    }
+
+    #cartItems button {
+        width: 100%; /* O botão ocupa toda a largura */
+        padding: 10px; /* Aumenta o tamanho do botão para facilitar o clique */
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        text-align: center; /* Centraliza o texto no botão */
+    }
+}
+
+@media (max-width: 480px) {
+    .modal {
+        width: 95%; /* Ajusta ainda mais para telas muito pequenas */
+        padding: 10px; /* Padding menor */
+    }
+
+    #cartItems li {
+        flex-direction: column; /* Alinha os itens verticalmente */
+        align-items: center; /* Centraliza o conteúdo */
+    }
+
+    #cartItems li div {
+        text-align: center; /* Centraliza o texto */
+        margin-bottom: 10px; /* Espaçamento entre o conteúdo e o botão */
+    }
+
+    #cartItems button {
+        width: 90%; /* O botão ocupa quase toda a largura */
+        padding: 12px; /* Aumenta o tamanho do botão */
+        font-size: 12px; /* Ajusta o tamanho da fonte para telas menores */
+        border-radius: 5px; /* Mantém bordas arredondadas */
+    }
+}
+
 .letrameucarrinho{
     text-align: center;
     font-weight: 700;

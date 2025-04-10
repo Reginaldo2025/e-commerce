@@ -325,6 +325,73 @@ nav ul li{
             flex-direction: column;
         }
     }
+
+    @media (max-width: 600px) {
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    .download-options > div {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .download-options > div img {
+        width: 140px;
+        margin-bottom: 1rem;
+    }
+
+    .links-footer h3,
+    .links-footer ul li {
+        padding-left: 0;
+        top: 0;
+    }
+
+    .section-title {
+        font-size: 22px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .gray-bacground {
+        margin-top: 6rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .footer-content {
+        padding: 1.5rem 0.5rem;
+        gap: 1rem;
+    }
+
+    .download-options > div img {
+        width: 120px;
+    }
+
+    .download-options > p:first-child {
+        font-size: 1rem;
+    }
+
+    .links-footer h3 {
+        font-size: 1.1rem;
+    }
+
+    .links-footer ul li {
+        font-size: 0.9rem;
+    }
+
+    .section-title {
+        font-size: 20px;
+    }
+
+    .gray-bacground {
+        margin-top: 4rem;
+    }
+}
+
+
 </style>
 <body>
     <div id="loading" class="loading-bar"></div>
